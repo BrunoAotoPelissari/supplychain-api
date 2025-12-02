@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: LogisticsHub API
+  version: 1.0.0
+  description: >
+    API para gestão de cadeia logística — incluindo fornecedores, produtos,
+    armazéns, estoque, pedidos e transporte. Inspirado em soluções de supply
+    chain e WMS desenvolvidas pela i9 Supply.
+
+servers:
+  - url: http://localhost:3000
+    description: Servidor local de desenvolvimento
+
+tags:
+  - name: Suppliers
+    description: Gestão de fornecedores
+  - name: Products
+    description: Catálogo e informações de produtos
+  - name: Warehouses
+    description: Gestão de armazéns
+  - name: Inventory
+    description: Controle de estoque
+  - name: Orders
+    description: Pedidos e ciclo de entrega
+  - name: Shipments
+    description: Rastreamento e transporte
+
+paths:
+  /suppliers:
+    $ref: './supplier.yaml#/paths/~1suppliers'
+  /suppliers/{id}:
+    $ref: './supplier.yaml#/paths/~1suppliers~1{id}'
+  /products:
+    $ref: './product.yaml#/paths/~1products'
+  /products/{id}:
+    $ref: './product.yaml#/paths/~1products~1{id}'
+  /warehouses:
+    $ref: './warehouse.yaml#/paths/~1warehouses'
+  /warehouses/{id}:
+    $ref: './warehouse.yaml#/paths/~1warehouses~1{id}'
+  /inventory:
+    $ref: './inventory.yaml#/paths/~1inventory'
+  /orders:
+    $ref: './order.yaml#/paths/~1orders'
+  /orders/{id}:
+    $ref: './order.yaml#/paths/~1orders~1{id}'
+  /shipments:
+    $ref: './shipment.yaml#/paths/~1shipments'
+  /shipments/{id}:
+    $ref: './shipment.yaml#/paths/~1shipments~1{id}'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []

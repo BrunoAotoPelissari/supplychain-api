@@ -1,0 +1,41 @@
+paths:
+  /warehouses:
+    get:
+      tags: [Warehouses]
+      summary: Lista armazéns
+      responses:
+        '200':
+          description: Lista de armazéns
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Warehouse'
+    post:
+      tags: [Warehouses]
+      summary: Cria armazém
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WarehouseCreate'
+      responses:
+        '201':
+          description: Armazém criado
+
+components:
+  schemas:
+    Warehouse:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string, example: 'CD Curitiba' }
+        location: { type: string, example: 'São José dos Pinhais - PR' }
+    WarehouseCreate:
+      type: object
+      required: [name, location]
+      properties:
+        name: { type: string }
+        location: { type: string }

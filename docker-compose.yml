@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    container_name: supplychain-api
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    container_name: supplychain-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: supplychain
+    ports:
+      - "5432:5432"

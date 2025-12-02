@@ -1,0 +1,61 @@
+paths:
+  /shipments:
+    get:
+      tags: [Shipments]
+      summary: Lista transportes
+      responses:
+        '200':
+          description: Lista de transportes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shipment'
+    post:
+      tags: [Shipments]
+      summary: Cria transporte
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShipmentCreate'
+      responses:
+        '201':
+          description: Transporte criado
+
+  /shipments/{id}:
+    get:
+      tags: [Shipments]
+      summary: Detalha transporte
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Transporte encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shipment'
+
+components:
+  schemas:
+    Shipment:
+      type: object
+      properties:
+        id: { type: string }
+        orderId: { type: string }
+        status:
+          type: string
+          enum: [PREPARING, IN_TRANSIT, DELIVERED]
+        shippedAt: { type: string, format: date-time }
+        deliveredAt: { type: string, format: date-time }
+    ShipmentCreate:
+      type: object
+      required: [orderId]
+      properties:
+        orderId: { type: string }

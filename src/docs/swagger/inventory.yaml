@@ -1,0 +1,47 @@
+paths:
+  /inventory:
+    get:
+      tags: [Inventory]
+      summary: Lista estoque atual
+      responses:
+        '200':
+          description: Lista de registros de estoque
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Inventory'
+    post:
+      tags: [Inventory]
+      summary: Cria ou atualiza item de estoque
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryCreate'
+      responses:
+        '201':
+          description: Registro criado/atualizado
+
+components:
+  schemas:
+    Inventory:
+      type: object
+      properties:
+        id: { type: string }
+        warehouseId: { type: string }
+        productId: { type: string }
+        quantity: { type: integer, example: 250 }
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2025-10-20T14:00:00Z'
+    InventoryCreate:
+      type: object
+      required: [warehouseId, productId, quantity]
+      properties:
+        warehouseId: { type: string }
+        productId: { type: string }
+        quantity: { type: integer }
