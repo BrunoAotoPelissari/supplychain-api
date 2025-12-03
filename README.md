@@ -6,4 +6,4 @@ LinkedIn
 - Segurança reforçada: roles, logs, perhaps integração com SSO se quiser extrapolar.
 
 PRÓXIMOS PASSOS:
-Gerar o client Prisma e rodar migrações e Testar o endpoints e verificar modules
+Gerar o client Prisma, rodar migrações, testar os endpoints e verificar modules
