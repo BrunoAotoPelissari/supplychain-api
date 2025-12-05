@@ -1,6 +1,8 @@
 import { Router } from "express";
+import { SupplierController } from "../modules/supplier/controller/SupplierController";
 
 const router = Router();
+const controller = new SupplierController();
 
 const suppliers = [
   { id: "1", name: "Seara", contactEmail: "contato@seara.com" },
@@ -8,6 +10,8 @@ const suppliers = [
 ];
 
 router.get("/", (req, res) => res.json(suppliers));
+router.get("/", controller.list);
+
 
 router.post("/", (req, res) => {
   const { name, contactEmail } = req.body;
