@@ -4,8 +4,7 @@ import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
 
-import supplierRoutes from "../../routes/supplier.routes";
-import productRoutes from "../../routes/product.routes";
+import supplierRoutes from "../routes/supplier.routes";
 
 dotenv.config();
 
@@ -19,6 +18,5 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
 app.use("/suppliers", supplierRoutes);
-app.use("/products", productRoutes);
 
 export default app;

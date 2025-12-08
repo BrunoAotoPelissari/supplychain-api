@@ -7,3 +7,5 @@ LinkedIn
 
 PRÓXIMOS PASSOS:
 Gerar o client Prisma, rodar migrações, testar os endpoints e verificar modules
+
+- Refazer README!
