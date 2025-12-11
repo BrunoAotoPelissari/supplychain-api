@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
 
-import supplierRoutes from "../routes/supplier.routes";
+import supplierRoutes from "../routes/supplier.routes.js";
 
 dotenv.config();
 

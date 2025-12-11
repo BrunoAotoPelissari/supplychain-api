@@ -8,7 +8,7 @@ const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const yamljs_1 = __importDefault(require("yamljs"));
-const supplier_routes_1 = __importDefault(require("../routes/supplier.routes"));
+const supplier_routes_js_1 = __importDefault(require("../routes/supplier.routes.js"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
@@ -17,5 +17,5 @@ app.use(express_1.default.json());
 const swaggerDocument = yamljs_1.default.load("./src/docs/swagger/swagger.yaml");
 app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocument));
 // Routes
-app.use("/suppliers", supplier_routes_1.default);
+app.use("/suppliers", supplier_routes_js_1.default);
 exports.default = app;
