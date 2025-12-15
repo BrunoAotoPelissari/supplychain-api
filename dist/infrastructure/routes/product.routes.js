@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const ProductController_1 = require("../../modules/product/ProductController");
 const router = (0, express_1.Router)();
-router.get("/", (req, res) => {
-    res.json({ message: "List of products" });
-});
+const controller = new ProductController_1.ProductController();
+router.get("/", controller.list);
+router.post("/", controller.create);
 exports.default = router;
