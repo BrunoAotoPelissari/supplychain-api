@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Orders
+  summary: Buscar pedido por ID
+  parameters:
+    - $ref: "../swagger.yaml#/components/parameters/IdParam"
+  responses:
+    200:
+      description: Pedido encontrado
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Order.yaml"
+    404:
+      description: Pedido não encontrado

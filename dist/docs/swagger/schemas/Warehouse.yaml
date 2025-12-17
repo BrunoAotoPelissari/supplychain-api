@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    type: string
+    example: "wh-001"
+  name:
+    type: string
+    example: "CD Curitiba"
+  location:
+    type: string
+    example: "São José dos Pinhais - PR"
+required:
+  - name
+  - location

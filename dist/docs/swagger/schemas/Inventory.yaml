@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: string
+    example: "inv-001"
+  productId:
+    type: string
+    example: "prod-001"
+  warehouseId:
+    type: string
+    example: "wh-001"
+  quantity:
+    type: integer
+    example: 120
+required:
+  - productId
+  - warehouseId
+  - quantity

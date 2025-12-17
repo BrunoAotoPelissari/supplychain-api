@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
+import path from "path";
 
 import supplierRoutes from "../routes/supplier.routes.js";
 import productRoutes from "../routes/product.routes";
@@ -15,7 +16,13 @@ app.use(cors());
 app.use(express.json());
 
 // Swagger Docs
-const swaggerDocument = YAML.load("./src/docs/swagger/swagger.yaml");
+const swaggerPath = path.resolve(
+  __dirname,
+  "../../docs/swagger/swagger.yaml"
+);
+
+const swaggerDocument = YAML.load(swaggerPath);
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Suppliers
+  summary: Listar fornecedores
+  responses:
+    200:
+      description: Lista de fornecedores
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../schemas/Supplier.yaml'
+
+post:
+  tags:
+    - Suppliers
+  summary: Criar fornecedor
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Supplier.yaml'
+  responses:
+    201:
+      description: Fornecedor criado

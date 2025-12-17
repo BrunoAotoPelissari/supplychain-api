@@ -1,0 +1,41 @@
+get:
+  tags:
+    - Products
+  summary: Buscar produto por ID
+  parameters:
+    - $ref: "../swagger.yaml#/components/parameters/IdParam"
+  responses:
+    200:
+      description: Produto encontrado
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Product.yaml"
+    404:
+      description: Produto não encontrado
+
+put:
+  tags:
+    - Products
+  summary: Atualizar produto
+  parameters:
+    - $ref: "../swagger.yaml#/components/parameters/IdParam"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/Product.yaml"
+  responses:
+    200:
+      description: Produto atualizado
+
+delete:
+  tags:
+    - Products
+  summary: Remover produto
+  parameters:
+    - $ref: "../swagger.yaml#/components/parameters/IdParam"
+  responses:
+    204:
+      description: Produto removido

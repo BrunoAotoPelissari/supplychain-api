@@ -9,3 +9,6 @@ PRÓXIMOS PASSOS:
 Gerar o client Prisma, rodar migrações, testar os endpoints e verificar modules
 
 - Refazer README!
+
+URGENTE:
+Swagger UI abre, mostra título e descrição mas não mostra rotas e nem get/post, rever conceitos

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Shipments
+  summary: Listar entregas
+  responses:
+    200:
+      description: Lista de entregas
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../schemas/Shipment.yaml"
+
+post:
+  tags:
+    - Shipments
+  summary: Criar entrega
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/Shipment.yaml"
+  responses:
+    201:
+      description: Entrega criada
