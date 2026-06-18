@@ -3,7 +3,7 @@
 - Auditoria: rastrear quem fez a operação (usuário, timestamp) — importante para clientes industriais e com compliance.
 - Multilíngue ou internacionalização leve se a empresa atua fora do Brasil (aparentemente sim, pois “Brasil, Alemanha, EUA”). 
 LinkedIn
-- Segurança reforçada: roles, logs, perhaps integração com SSO se quiser extrapolar.
+- Segurança reforçada: roles, logs, perhaps integração com SSO.
 
 PRÓXIMOS PASSOS:
 Gerar o client Prisma, rodar migrações, testar os endpoints e verificar modules
@@ -11,4 +11,5 @@ Gerar o client Prisma, rodar migrações, testar os endpoints e verificar module
 - Refazer README!
 
 URGENTE:
-Swagger UI abre, mostra título e descrição mas não mostra rotas e nem get/post, rever conceitos
+Swagger UI mostra título e descrição mas não mostra rotas e nem get/post, rever conceitos
+
