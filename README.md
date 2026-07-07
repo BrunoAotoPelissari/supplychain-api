@@ -10,6 +10,6 @@ Gerar o client Prisma, rodar migrações, testar os endpoints e verificar module
 
 - Refazer README!
 
-URGENTE:
-Swagger UI mostra título e descrição mas não mostra rotas e nem get/post, rever conceitos
+ainda usa um repositório em memória (private products: Product[] = []), então qualquer reinicialização do servidor apaga todos os produtos.
+realizar mais testes do CRUD e se  funcionar, o próximo passo será migrar o ProductRepository para usar o Prisma + PostgreSQL,
 
