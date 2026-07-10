@@ -10,6 +10,16 @@ Gerar o client Prisma, rodar migrações, testar os endpoints e verificar module
 
 - Refazer README!
 
+
 ainda usa um repositório em memória (private products: Product[] = []), então qualquer reinicialização do servidor apaga todos os produtos.
-realizar mais testes do CRUD e se  funcionar, o próximo passo será migrar o ProductRepository para usar o Prisma + PostgreSQL,
+CRUD completo de Products
+CRUD de Suppliers
+CRUD de Warehouses
+CRUD de Inventory
+CRUD de Orders
+CRUD de Shipments
+Prisma integrado
+PostgreSQL persistindo os dados
+próximo passo será migrar o ProductRepository para usar o Prisma com PostgreSQL
+testar docker e continuar testando CRUD e usecases 
 
