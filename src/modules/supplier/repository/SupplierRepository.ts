@@ -3,6 +3,8 @@ import { prisma } from "../../../config/prisma";
 export interface CreateSupplierDTO {
   name: string;
   contactEmail: string;
+  phone?: string;
+  active?: boolean;
 }
 
 export interface UpdateSupplierDTO {
@@ -28,10 +30,15 @@ export class SupplierRepository {
   }
 
   async create(data: CreateSupplierDTO) {
-    return prisma.supplier.create({
-      data,
-    });
-  }
+  return prisma.supplier.create({
+    data: {
+      name: data.name,
+      contactEmail: data.contactEmail,
+      phone: data.phone,
+      active: data.active ?? true,
+    },
+  });
+}
 
   async update(id: string, data: UpdateSupplierDTO) {
     return prisma.supplier.update({

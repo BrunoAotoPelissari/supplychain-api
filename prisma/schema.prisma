@@ -11,6 +11,8 @@ model Supplier {
   id           String    @id @default(uuid())
   name         String
   contactEmail String
+  phone        String?
+  active       Boolean   @default(true)
   createdAt    DateTime  @default(now())
   products     Product[]
 }
